@@ -1,0 +1,18 @@
+char gelenVeri;
+void setup() {
+Serial.begin(9600);
+pinMode(11,OUTPUT);
+}
+
+void loop() {
+if(Serial.available()>0)
+{
+ gelenVeri = Serial.read();
+ if(gelenVeri=='A') analogWrite(11,255);
+ else if(gelenVeri=='B') analogWrite(11,200);
+ else if(gelenVeri=='C') analogWrite(11,165);
+ else if(gelenVeri=='D') analogWrite(11,100);
+ else if(gelenVeri=='E') analogWrite(11,50);
+ else if(gelenVeri=='F') analogWrite(11,0);
+ }
+}
